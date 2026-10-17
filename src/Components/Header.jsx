@@ -20,7 +20,7 @@ console.log(open)
   return (
     <div className='w-full flex px-10 py-6'>
         <div className={`${open ? 'z-1' : ''} w-full h-auto flex justify-between ` }>
-{/*  logo renginde kaldın */}
+
           <a href="/"><img className='cursor-pointer' src={`${open? logo2: logo}`} alt="" /></a>
          <button className={`${open ? '' : ''} cursor-pointer `} onClick={controlOpen}> <img src={open ? Close: Hamburger} alt="" />  </button>
         </div>
@@ -35,7 +35,7 @@ console.log(open)
           }
           </ul>
 
-          <button className='w-100 self-center text-3xl border p-2 uppercase   text-white '>Login</button>
+          <button className='w-100 self-center text-3xl border p-2 uppercase cursor-pointer  text-white '>Login</button>
        </nav>
     </div>
   )
