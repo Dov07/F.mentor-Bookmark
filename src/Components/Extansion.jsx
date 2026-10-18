@@ -28,12 +28,12 @@ const Extansion = () => {
     ]
 
     return (
-        <div>
-            <div>
-                <h3>
+        <div className='w-full h-auto'>
+            <div className='w-full h-auto p-6 flex flex-col gap-5 justify-center items-center tex-center'>
+                <h3 className='text-2xl text-center font-medium'>
                     Download the Extansion
                 </h3>
-                <p>
+                <p className='text-center text-xl '>
                     We've got more browsers in the pipeline. Please do let us know if you've got a favorite you'd like us to prioritize.
                 </p>
 
@@ -41,18 +41,19 @@ const Extansion = () => {
             </div>
             {
                 extansion.map((e) => (
-                    <div>
-                        <div key={e.id}>
-                            <img src={e.img} alt={e.title} />
-                            <h3>{e.title}</h3>    
-                            <p>{e.version}</p>
-                        </div>
-                        
-                        <div>
-                            <img src={dots} alt="dots" />
-                            <button>Add & Install Extension</button>
-                        </div>
+                    <div className='w-full h-auto flex flex-col justify-center items-center p-6 '>
+                        <div className='flex flex-col justify center items-center py-4 shadow-md rounded-lg'>
+                            <div className=' w-full flex flex-col gap-6 justify-center items-center' key={e.id}>
+                                <img src={e.img} alt={e.title} />
+                                <h3>{e.title}</h3>
+                                <p>{e.version}</p>
+                            </div>
 
+                            <div className='py-6 w-full flex flex-col gap-6 justify-center items-center '>
+                                <img src={dots} alt="dots" />
+                                <button className='w-[15rem] text-center bg-[hsl(231,69%,60%)] p-4 rounded-md text-white cursor-pointer '>Add & Install Extension</button>
+                            </div>
+                        </div>
                     </div>
                 ))
             }
