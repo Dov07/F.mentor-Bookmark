@@ -28,36 +28,44 @@ const Extansion = () => {
     ]
 
     return (
-        <div className='w-full h-auto'>
-            <div className='w-full h-auto p-6 flex flex-col gap-5 justify-center items-center tex-center'>
-                <h3 className='text-2xl text-center font-medium'>
+        <div className='w-full h-auto flex flex-col gap-4'>
+            <div className='w-full h-auto p-6 flex flex-col gap-5 justify-center items-center tex-center
+            lg:w-[50%] lg:m-auto
+            '>
+                <h3 className='text-2xl text-center font-medium lg:text-4xl'>
                     Download the Extansion
                 </h3>
-                <p className='text-center text-xl '>
+                <p className='text-center text-xl lg:text-2xl '>
                     We've got more browsers in the pipeline. Please do let us know if you've got a favorite you'd like us to prioritize.
                 </p>
 
 
             </div>
-            {
-                extansion.map((e) => (
-                    <div className='w-full h-auto flex flex-col justify-center items-center p-6 '>
-                        <div className='flex flex-col justify center items-center py-4 shadow-md rounded-lg'>
-                            <div className=' w-full flex flex-col gap-6 justify-center items-center' key={e.id}>
-                                <img src={e.img} alt={e.title} />
-                                <h3>{e.title}</h3>
-                                <p>{e.version}</p>
-                            </div>
+            <div className='lg: w-full lg:h-auto lg:flex lg:justify-center'>
+                {
 
-                            <div className='py-6 w-full flex flex-col gap-6 justify-center items-center '>
-                                <img src={dots} alt="dots" />
-                                <button className='w-[15rem] text-center bg-[hsl(231,69%,60%)] p-4 rounded-md text-white cursor-pointer '>Add & Install Extension</button>
+                    extansion.map((e, index) => (
+                        <div key={e.id} className= {` lg:w-auto w-full h-auto flex flex-col justify-center items-center p-6
+                        ${index === 1 ? 'lg:mt-18' : ''}
+        ${index === 2 ? 'lg:mt-34' : ''}
+                        `}>
+                            <div className='flex flex-col justify center items-center py-4 shadow-md rounded-lg
+                        '>
+                                <div className=' w-full flex flex-col gap-6 justify-center items-center' key={e.id}>
+                                    <img src={e.img} alt={e.title} />
+                                    <h3>{e.title}</h3>
+                                    <p>{e.version}</p>
+                                </div>
+
+                                <div className='py-6 w-full flex flex-col gap-6 justify-center items-center '>
+                                    <img src={dots} alt="dots" />
+                                    <button className='w-[15rem] text-center bg-[hsl(231,69%,60%)] p-4 rounded-md border border-transparent text-white cursor-pointer hover:text-[hsl(231,69%,60%)] hover:bg-white hover:border-[hsl(231,69%,60%)]'>Add & Install Extension</button>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                ))
-            }
-
+                    ))
+                }
+            </div>
         </div>
     )
 }

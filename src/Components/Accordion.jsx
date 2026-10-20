@@ -37,7 +37,7 @@ const Accordion = () => {
 
 
     return (
-        <div className='p-4 w-full flex flex-col gap-6'>
+        <div className='p-4 w-full flex flex-col gap-6 lg:w-[50%] m-auto'>
             <div className='w-full h-auto flex flex-col gap-4'>
                 <h3 className='text-center font-medium text-3xl'>Frequently Asked Questions</h3>
                 <p className='text-center'>Here are some of our FAQs. If You have any other questions you'd like answered please feel free to email us.</p>

@@ -53,21 +53,23 @@ const HeroM = () => {
     console.log(HandleID)
     return (
         <div className='w-full py-10'>
-            <div className='w-auto h-auto flex flex-col justify-center gap-2'>
+            <div className='w-auto h-auto flex flex-col justify-center gap-2 lg:w-[50%]  lg:m-auto'>
                 <h3 className='text-center text-4xl font-medium'>Features</h3>
-                <p className='text-center p-3 text-lg'>
+                <p className='text-center p-3 text-lg '>
                     Our aim is to make it quick and easy for you to access your favorite websites. Your bookmarks sync between your devices so you can access them on the go.
                 </p>
             </div>
 
             <div className=''>
-                <div className='flex flex-col items-center px-10 py-4 '>
+                <div className='flex flex-col items-center px-10 py-4 lg:flex-row lg:gap-2s lg:justify-center'>
                     {headTitle.map((e, index) => (
                         <div
-                            className={`w-full h-auto p-2 flex justify-center border-[lightgrey] ${index === 0 ? 'border-t border-b' : ''} ${index === headTitle.length - 1 ? 'border-t border-b' : ''}`}
+                            className={` lg:w-auto lg:h-[6rem] lg:items-center  w-full h-auto p-2 flex justify-center border-[lightgrey] ${index === 0 ? 'border-t border-b' : ''} ${index === headTitle.length - 1 ? 'border-t border-b' : ''}
+                                lg:border-none lg:p-2 
+                            `}
                             key={e.id}
                         >
-                            <button className='w-[70%] p-4 cursor-pointer hover:p-4  hover:border-b-3 hover:border-b-[hsl(0,94%,66%)]' onClick={() => setHandleID(e.id)}>{e.title}</button>
+                            <button className='w-[70%] lg:w-full  p-4 cursor-pointer hover:p-4  hover:border-b-3 hover:border-b-[hsl(0,94%,66%)]' onClick={() => setHandleID(e.id)}>{e.title}</button>
                         </div>
                     ))}
                 </div>
@@ -75,9 +77,13 @@ const HeroM = () => {
                 <div className='py-10 '>
                     {
                         activeContent && (
-                            <div className='relative w-full flex flex-col items-center justify-center text-center p-4 gap-20  '>
-                                <img className='w-90' src={activeContent.img} alt={activeContent.title} />
-                                <div className='w-full flex flex-col gap-6 p-4'>
+                            <div className='relative lg:flex-row lg:px-2 lg:gap-10 lg:h-[25rem]  w-full flex flex-col items-center justify-center text-center p-4 gap-20  '>
+                                <div className='absolute left-0 bottom-0  lg:w-[35rem] lg:h-[18rem] bg-[hsl(231,69%,60%)] rounded-r-full z-[-1]'></div>
+
+                                <div className='lg:w-[50%] lg:h-auto lg:flex lg:justify-center'>
+                                    <img className='w-90 lg:w-[65%]' src={activeContent.img} alt={activeContent.title} />
+                                </div>
+                                <div className='w-90 lg:w-[50%] flex flex-col gap-6 p-4'>
                                     <h3 className='text-4xl font-medium '>{activeContent.title}</h3>
                                     <p className='text-xl'>{activeContent.desc}</p>
                                 </div>
